@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!--ビューポートの設定-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/css/reset.css" rel="stylesheet" media="all">
+<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<!--　↓↓ローダーcss↓↓　-->
+<link href="css/css/roader.css" rel="stylesheet" type="text/css">
+<link href="css/logo_f.bloom.css" rel="stylesheet">
+<title>cafe</title>
+<script src="css/js/jquery-2.2.4.min.js"></script>
+<script src="css/js/nav.js"></script>
+</head>
+	
+<body>
+	<!--　↓↓ローダー↓↓　-->
+<div class="loader-wrap">
+	<div class="loader">Loading...</div>
+</div>
+<!--　↑↑ローダー↑↑　-->
+	
+<header id="top">
+<!-- グローバルナビ↓-->
+  <div class="toggleWrap"> 
+    <ul class="mainNav">
+      <a class="navItem" href="#home"><li>Home</li></a>
+      <a class="navItem" href="#about"><li>About</li></a>
+      <a class="navItem" href="#product"><li>Works</li></a>
+      <a class="navItem" href="#contact"><li>Contact</li></a>
+    </ul>
+  </div>
+<!-- グローバルナビ↑-->
+	
+<!--ハンバーガー↓-->
+  <div id="toggle">
+    <div class="trigger">
+    <span></span> <span></span> <span></span>
+    </div>
+	<!--<p>menu</p>必要ならばflexの記述が必要-->
+  </div>
+<!--ハンバーガー↑-->	
+	
+ <main>
+ </main>	
+	
+ <footer>
+  <div class="inner">
+    <section> 
+		<p>&copy; Haruna Yamanaka</p>
+    </section>
+	  <div id="gototop"><a href="#top"></a></div>
+  </div><!--f_inner--> 
+</footer>
+</body>
+	<script>
+	jQuery(function() {
+  var appear = false;
+  var pagetop = $('#gototop');
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {  //100pxスクロールしたら
+      if (appear == false) {
+        appear = true;
+        pagetop.stop().animate({
+          'bottom': '30px' //下から50pxの位置に
+        }, 300); //0.3秒かけて現れる
+      }
+    } else {
+      if (appear) {
+        appear = false;
+        pagetop.stop().animate({
+          'bottom': '-20px' //下から-50pxの位置に
+        }, 300); //0.3秒かけて隠れる
+      }
+    }
+  });
+  pagetop.click(function () {
+    $('body, html').animate({ scrollTop: 0 }, 500); //0.5秒かけてトップへ戻る
+    return false;
+  });
+});
+</script>
+</html>	 
